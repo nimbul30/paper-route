@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Paper Route News - Article</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'pr-background': '#6b7d91',
+              'pr-nav': '#d8d3c4',
+              'pr-primary': '#182a38',
+              'pr-secondary': '#757d7f',
+              'pr-text-accent': '#eae7db',
+              'card-bg': '#eae7db',
+            },
+            fontFamily: {
+              display: ['Playfair Display', 'serif'],
+              body: ['Roboto', 'sans-serif'],
+            },
+            boxShadow: {
+              custom:
+                '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      #article-body h3 {
+        color: #182a38;
+        font-weight: bold;
+        font-size: 1.25rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #d8d3c4;
+        padding-bottom: 0.5rem;
+      }
+
+      #article-body h4 {
+        color: #182a38;
+        font-weight: 600;
+        font-size: 1.125rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      #article-body p {
+        margin-bottom: 1rem;
+        line-height: 1.75;
+        text-align: justify;
+      }
+
+
+    </style>
+  </head>
+  <body
+    class="bg-pr-background font-body text-pr-primary transition-colors duration-300"
+  >
+    <div
+      class="relative flex size-full min-h-screen flex-col overflow-x-hidden"
+    >
+      <div class="flex h-full grow flex-col">
+        <header class="bg-[#eae7db] shadow-md sticky top-0 z-50">
+          <nav
+            class="container mx-auto px-6 py-3 flex justify-between items-center"
+          >
+            <div class="flex items-center">
+              <img
+                alt="The Paper Route News Logo"
+                class="h-16 md:h-24 mr-4"
+                src="assets/news logo.png"
+              />
+              <div>
+                <a
+                  class="text-xl md:text-2xl font-display font-bold text-pr-primary"
+                  href="home.html"
+                  >The Paper Route News</a
+                >
+              </div>
+            </div>
+          </nav>
+        </header>
+        <main class="container mx-auto px-6 py-12 relative">
+          <div id="layout-default" class="hidden">
+            <div class="max-w-4xl mx-auto" id="article-content">
+              <div class="flex items-center justify-between mb-8">
+                <a
+                  href="home.html"
+                  class="flex items-center gap-2 text-pr-secondary hover:text-pr-primary transition-colors"
+                >
+                  <span class="material-icons">arrow_back</span>
+                  <span>Back to Home</span>
+                </a>
+              </div>
+              <div class="bg-card-bg rounded-lg shadow-custom overflow-hidden relative">
+                <div class="absolute top-4 right-4 z-10 flex gap-2">
+                  <button data-image-url="" class="image-modal-trigger bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">View Image</button>
+                  <button data-slug="" class="transparency-btn-trigger bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Transparency Report</button>
+                </div>
+                <div class="p-8">
+                  <div
+                    id="article-image"
+                    class="bg-center bg-no-repeat aspect-video bg-cover rounded-lg mb-6"
+                    style="background-image: url('assets/news logo.png')"
+                  ></div>
+                  <div id="youtube-embed-container" class="mb-6"></div>
+                  <h1
+                    id="article-title"
+                    class="text-pr-primary font-display text-4xl font-bold mb-4"
+                  >
+                    Loading Article...
+                  </h1>
+                  <div
+                    class="flex items-center gap-6 text-pr-secondary text-sm mb-6 border-b border-pr-nav pb-6"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span id="author-name" class="font-semibold text-pr-primary"
+                        >Loading...</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    id="article-body"
+                    class="prose prose-lg max-w-none text-pr-primary mt-6 leading-relaxed"
+                  >
+                    <p>Please wait while the content is being loaded.</p>
+                  </div>
+                  <div
+                    id="article-sources"
+                    class="border-t border-pr-nav mt-8 pt-6"
+                  >
+                    <h3
+                      class="text-xl font-display font-bold text-pr-primary mb-4"
+                    >
+                      Sources
+                    </h3>
+                    <div
+                      id="sources-list"
+                      class="text-black space-y-2"
+                    ></div>
+                  </div>
+                </div>
+                <div class="bg-pr-nav px-8 py-6">
+                  <h3 class="text-xl font-display font-bold text-pr-primary mb-4">
+                    Article Verification
+                  </h3>
+                  <div id="verification-pdf-link-container" class="mb-4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="layout-two-column" class="hidden">
+            <!-- Two-column layout will be generated here -->
+          </div>
+          <div id="layout-full-width-image" class="hidden">
+            <!-- Full-width image layout will be generated here -->
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="/js/article.js"></script>
+    <script src="/js/transparency.js"></script>
+    <script src="/js/image-modal.js"></script>
+    <div id="modal-container"></div>
+  </body>
+</html>

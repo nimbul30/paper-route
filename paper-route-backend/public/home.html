@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Paper Route News</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'pr-background': '#6b7d91',
+              'pr-nav': '#d8d3c4',
+              'pr-primary': '#182a38',
+              'pr-secondary': '#757d7f',
+              'pr-text-accent': '#eae7db',
+              'card-bg': '#182a38',
+            },
+            fontFamily: {
+              display: ['Playfair Display', 'serif'],
+              body: ['Roboto', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+            },
+            boxShadow: {
+              custom:
+                '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-pr-primary font-body text-pr-text-accent transition-colors duration-300"
+  >
+    <header
+      class="bg-pr-primary shadow-md sticky top-0 z-50 border-b-2 border-pr-nav"
+    >
+      <nav
+        class="container mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <img
+            alt="The Paper Route News Logo"
+            class="h-16 md:h-24 mr-4 rounded-md"
+            src="assets\news logo.png"
+          />
+          <div>
+            <a
+              class="text-xl md:text-2xl font-display font-bold text-pr-text-accent"
+              href="#"
+              >The Paper Route News</a
+            >
+            <p class="hidden md:block text-sm text-pr-nav mt-1">
+              Your daily route to the stories that matter.
+            </p>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center flex-wrap desktop-nav gap-2">
+          <a class="nav-tag" href="#politics">Politics</a>
+          <a class="nav-tag" href="#world">World</a>
+          <a class="nav-tag" href="#business">Business</a>
+          <a class="nav-tag" href="#technology">Technology</a>
+          <a class="nav-tag" href="#science">Science</a>
+          <a class="nav-tag" href="#health">Health</a>
+          <a class="nav-tag" href="#sports">Sports</a>
+          <a class="nav-tag" href="#entertainment">Entertainment</a>
+          <a class="nav-tag" href="#arts & culture">Arts & Culture</a>
+          <a class="nav-tag" href="#economy">Economy</a>
+          <a class="nav-tag" href="#environment">Environment</a>
+          <a class="nav-tag" href="#education">Education</a>
+          <a class="nav-tag" href="#law & crime">Law & Crime</a>
+          <a class="nav-tag" href="#lifestyle">Lifestyle</a>
+          <a class="nav-tag" href="#opinion">Opinion</a>
+          <a class="nav-tag" href="#human interest">Human Interest</a>
+          <a class="nav-tag" href="#weather">Weather</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="hidden md:flex items-center search-bar">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search by tag..."
+              class="px-4 py-2 rounded-l-md text-gray-800 bg-pr-background border-none focus:outline-none focus:ring-0"
+            />
+            <button
+              id="search-btn"
+              class="bg-transparent text-white font-bold py-2 px-4 rounded-r-md hover:bg-opacity-90 border-none"
+            >
+              <span class="material-icons">search</span>
+            </button>
+          </div>
+          <button class="md:hidden flex items-center mobile-menu-button">
+            <span class="material-icons text-pr-text-accent">menu</span>
+          </button>
+        </div>
+      </nav>
+      <div class="md:hidden main-nav" id="mobile-menu">
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#politics">Politics</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#world">World</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#business">Business</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#technology">Technology</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#science">Science</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#health">Health</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#sports">Sports</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#entertainment">Entertainment</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#arts & culture">Arts & Culture</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#economy">Economy</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#environment">Environment</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#education">Education</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#law & crime">Law & Crime</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#lifestyle">Lifestyle</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#opinion">Opinion</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#human interest">Human Interest</a>
+        <a class="block py-2 px-4 text-sm hover:bg-pr-nav" href="#weather">Weather</a>
+      </div>
+    </header>
+    <main class="container mx-auto px-6 py-12">
+      <section class="hero-section" id="featured-articles">
+        <!-- Featured articles will be injected here by app.js -->
+      </section>
+
+      <div class="article-list-container">
+        <h2 class="article-list-title">Latest Stories</h2>
+        <section class="article-list" id="article-list">
+          <!-- Article items will be injected here by app.js -->
+        </section>
+      </div>
+    </main>
+    <footer class="bg-pr-primary mt-12 border-t border-pr-nav">
+      <div class="container mx-auto px-6 py-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <h3 class="text-xl font-display font-bold text-pr-text-accent">
+              The Paper Route News
+            </h3>
+            <p class="text-sm text-pr-nav mt-1">paperroutenews.com</p>
+          </div>
+          <div class="flex space-x-6 text-pr-nav footer-links">
+            <a class="hover:text-white" href="#">About Us</a>
+            <a class="hover:text-white" href="#">Contact</a>
+            <a class="hover:text-white" href="#">Privacy Policy</a>
+            <a class="hover:text-white" href="#">Terms of Service</a>
+          </div>
+        </div>
+        <div
+          class="mt-8 pt-6 border-t border-pr-nav text-center text-sm text-pr-nav"
+        >
+          <p>© 2025 The Paper Route News. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const mobileMenuButton = document.querySelector('.mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('is-open');
+      });
+    </script>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

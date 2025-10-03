@@ -1,0 +1,6 @@
+/* synthesizer/style.css */
+
+/* Define primary color variable */
+:root {
+  --primary-color: #ef4444; /* Tailwind's red-500, or your preferred primary color */
+}

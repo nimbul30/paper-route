@@ -1,0 +1,408 @@
+/* Tailwind CSS Configuration - Converted to CSS Variables */
+:root {
+  --pr-background: #6b7d91;
+  --pr-nav: #d8d3c4;
+  --pr-primary: #182a38;
+  --pr-secondary: #757d7f;
+  --pr-text-accent: #eae7db;
+  --card-bg: #182a38; /* Updated for dark theme */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Roboto', sans-serif;
+  --shadow-custom: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Base Styles */
+body {
+  background-color: var(--pr-primary);
+  font-family: var(--font-body);
+  color: var(--pr-text-accent);
+  transition: color 0.3s, background-color 0.3s;
+}
+
+/* Hero Section */
+.hero-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.featured-article {
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.featured-article img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featured-article:hover img {
+  transform: scale(1.05);
+}
+
+.featured-article-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+}
+
+.featured-article-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: var(--font-display);
+}
+
+.featured-article-summary {
+  font-size: 0.875rem;
+  color: var(--pr-text-accent);
+}
+
+/* Article List */
+.article-list-container {
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 0.5rem;
+}
+
+.article-list-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: var(--font-display);
+  margin-bottom: 1.5rem;
+  color: var(--pr-text-accent);
+  border-bottom: 2px solid var(--pr-nav);
+  padding-bottom: 0.5rem;
+}
+
+.article-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.article-item {
+  background-color: var(--pr-background);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-custom);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.article-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.article-item-content {
+  padding: 1rem;
+}
+
+.article-item-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: var(--font-display);
+  color: var(--pr-text-accent);
+  margin-bottom: 0.5rem;
+}
+
+.article-item-summary {
+  font-size: 0.875rem;
+  color: var(--pr-nav);
+}
+
+/* News Ticker */
+.news-ticker-container {
+  width: 100%;
+  padding: 0.75rem 0;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.news-ticker-container::before,
+.news-ticker-container::after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    var(--pr-primary),
+    var(--pr-secondary),
+    #ffffff,
+    var(--pr-secondary),
+    var(--pr-primary)
+  );
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -2; /* Sit behind the ticker content */
+  animation: steam 20s linear infinite;
+}
+
+.news-ticker-container::after {
+  filter: blur(20px);
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.news-ticker {
+  background-color: var(--pr-primary);
+  color: var(--card-bg);
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-ticker 40s linear infinite;
+  white-space: nowrap;
+}
+
+.news-ticker li {
+  display: inline-block;
+  padding: 0 2rem;
+  font-size: 0.9rem;
+}
+
+@keyframes scroll-ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Custom Scrollbar */
+.comment-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.comment-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.comment-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.comment-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* News Section & Article Styles */
+.news-section {
+  background-color: var(--pr-primary); /* Changed from white */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-custom); /* Added shadow */
+}
+.news-section-title {
+  font-weight: bold;
+  border-bottom: 2px solid var(--pr-nav); /* Adjusted for contrast */
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--pr-text-accent);
+}
+.news-article {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--pr-nav);
+}
+.news-article:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.news-article img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+.news-article h4 {
+  font-weight: bold;
+  color: var(--pr-text-accent);
+  margin-bottom: 0.25rem;
+}
+.news-article p {
+  font-size: 0.875rem;
+  color: var(--pr-nav);
+}
+
+/* Card Background and Shadow for Hero Section */
+.bg-card-bg {
+  background-color: var(--card-bg);
+}
+
+.shadow-custom {
+  box-shadow: var(--shadow-custom);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Header */
+  header .container {
+    flex-wrap: wrap;
+  }
+  .main-nav {
+    display: flex;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .main-nav.is-open {
+    display: flex;
+  }
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  /* Main Content Grids */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  main .grid > div {
+    margin-bottom: 1rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  footer .container > div {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+/* Tags Styling */
+.tags-container {
+  position: absolute;
+  top: 0.5rem; /* Adjust as needed */
+  left: 0.5rem; /* Adjust as needed */
+  z-index: 10; /* Ensure tags are above the image */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.tag-badge {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease-in-out;
+}
+
+.tag-badge:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transform: scale(2);
+  z-index: 1;
+}
+
+/* Transparency Modal Styles */
+#transparency-modal.flex {
+  display: flex;
+}
+
+#transparency-modal.hidden {
+  display: none;
+}
+
+#close-modal-btn {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.transparency-button {
+  background-color: var(--pr-secondary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: 1px solid var(--pr-nav);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.transparency-button:hover {
+  background-color: var(--pr-primary);
+  transform: translateY(-1px);
+}
+
+/* Search button styles */
+#search-btn {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+#search-btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.transparency-card {
+  background-color: var(--pr-background);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--pr-secondary);
+}
+
+.nav-tag {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease-in-out;
+}
+
+.nav-tag:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
